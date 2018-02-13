@@ -1,0 +1,2 @@
+#!/bin/sh
+openresty -p /etc/nginx/ -c /etc/nginx/nginx.conf
