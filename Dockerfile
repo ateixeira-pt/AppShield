@@ -86,9 +86,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && DEBIAN_FRONTEND=noninteract
 	&& make build \
 	&& make install \
 	&& cd /tmp \
-	&& rm -rf luarocks-${RESTY_LUAROCKS_VERSION} luarocks-${RESTY_LUAROCKS_VERSION}.tar.gz \
-	&& ln -sf /dev/stdout /usr/local/openresty/nginx/logs/access.log \
-	&& ln -sf /dev/stderr /usr/local/openresty/nginx/logs/error.log
+	&& rm -rf luarocks-${RESTY_LUAROCKS_VERSION} luarocks-${RESTY_LUAROCKS_VERSION}.tar.gz
 
 # Add Binaries To PATH
 ENV PATH=$PATH:/usr/local/openresty/luajit/bin/:/usr/local/openresty/nginx/sbin/:/usr/local/openresty/bin/
