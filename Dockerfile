@@ -104,7 +104,7 @@ RUN chmod 755 /etc/my_init.d/* && \
 	chmod 755 -R /opt/scripts/*
 
 # ################################################################
-# Install NGINX Config & Setup OPM && LogRotate
+# Install NGINX Config & Setup OPM && Nginx LogRotate
 # ################################################################
 
 ADD config/nginx /etc/nginx/
