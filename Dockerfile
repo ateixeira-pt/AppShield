@@ -104,13 +104,14 @@ RUN chmod 755 /etc/my_init.d/* && \
 	chmod 755 -R /opt/scripts/*
 
 # ################################################################
-# Install NGINX Config & Setup OPM
+# Install NGINX Config & Setup OPM && LogRotate
 # ################################################################
 
 ADD config/nginx /etc/nginx/
 RUN mkdir -p /var/log/nginx/ && chown www-data:www-data /var/log/nginx/ && \
 	opm get hamishforbes/lua-resty-iputils && \
-	opm get openresty/lua-resty-limit-traffic
+	opm get openresty/lua-resty-limit-traffic && \
+	mv /opt/scripts/logrotate_nginx /etc/logrotate.d/nginx
 
 # ################################################################
 # Install BotBlocker

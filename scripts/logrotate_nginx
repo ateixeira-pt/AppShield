@@ -1,0 +1,11 @@
+/usr/local/openresty/nginx/logs/*log {
+	create 0644 www-data www-data
+	daily
+	rotate 10
+	missingok
+	notifempty
+	sharedscripts
+	postrotate
+		[ ! -f /usr/local/openresty/nginx/logs/nginx.pid ] || kill -USR1 `cat /usr/local/openresty/nginx/logs/nginx.pid`
+	endscript
+}
