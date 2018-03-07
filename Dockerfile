@@ -26,6 +26,7 @@ ARG RESTY_CONFIG_OPTIONS="\
 	--with-http_ssl_module \
 	--with-http_stub_status_module \
 	--with-http_v2_module \
+	--with-http_auth_request_module \
 	--with-ipv6 \
 	--with-md5-asm \
 	--with-pcre-jit \
