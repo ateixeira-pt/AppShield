@@ -100,9 +100,9 @@ ADD cron.d /etc/cron.d/
 ADD my_init.d /etc/my_init.d/
 ADD service /etc/service/
 ADD scripts /opt/scripts/
-RUN chmod 755 /etc/my_init.d/* && \
+RUN chmod -R 755 /etc/my_init.d/* && \
 	chmod -R 755 /etc/service/* && \
-	chmod 755 -R /opt/scripts/*
+	chmod -R 755 /opt/scripts/*
 
 # ################################################################
 # Install NGINX Config & Setup OPM && Nginx LogRotate
@@ -127,3 +127,4 @@ RUN curl -fSL https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-ba
 # ################################################################
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
